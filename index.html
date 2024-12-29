@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnout Self-Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .bar {
+            width: 50px;
+            margin: 5px;
+            text-align: center;
+            color: white;
+            display: inline-block;
+        }
+        .bar.red { background-color: red; }
+        .bar.blue { background-color: blue; }
+        .bar.grey { background-color: grey; }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #results, #results * {
+                visibility: visible;
+            }
+            #results {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Burnout Self-Test</h1>
+    <p>For each statement, click the button in the column that best describes you. Please answer questions as you actually are (rather than how you think you should be), and don't worry if some questions seem to score in the "wrong direction." When you are finished, please click the "Submit" button at the bottom of the test.</p>
+    <form id="survey-form">
+        <ul>
+            <li>
+                <h4>1. I feel run down and drained of physical or emotional energy.</h4>
+                <label><input type="radio" name="question1" value="1"> Not at all</label>
+                <label><input type="radio" name="question1" value="2"> Rarely</label>
+                <label><input type="radio" name="question1" value="3"> Sometimes</label>
+                <label><input type="radio" name="question1" value="4"> Often</label>
+                <label><input type="radio" name="question1" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>2. I have negative thoughts about my job.</h4>
+                <label><input type="radio" name="question2" value="1"> Not at all</label>
+                <label><input type="radio" name="question2" value="2"> Rarely</label>
+                <label><input type="radio" name="question2" value="3"> Sometimes</label>
+                <label><input type="radio" name="question2" value="4"> Often</label>
+                <label><input type="radio" name="question2" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>3. I am harder and less sympathetic with people than perhaps they deserve.</h4>
+                <label><input type="radio" name="question3" value="1"> Not at all</label>
+                <label><input type="radio" name="question3" value="2"> Rarely</label>
+                <label><input type="radio" name="question3" value="3"> Sometimes</label>
+                <label><input type="radio" name="question3" value="4"> Often</label>
+                <label><input type="radio" name="question3" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>4. I am easily irritated by small problems, or by my co-workers and team.</h4>
+                <label><input type="radio" name="question4" value="1"> Not at all</label>
+                <label><input type="radio" name="question4" value="2"> Rarely</label>
+                <label><input type="radio" name="question4" value="3"> Sometimes</label>
+                <label><input type="radio" name="question4" value="4"> Often</label>
+                <label><input type="radio" name="question4" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>5. I feel misunderstood or unappreciated by my co-workers.</h4>
+                <label><input type="radio" name="question5" value="1"> Not at all</label>
+                <label><input type="radio" name="question5" value="2"> Rarely</label>
+                <label><input type="radio" name="question5" value="3"> Sometimes</label>
+                <label><input type="radio" name="question5" value="4"> Often</label>
+                <label><input type="radio" name="question5" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>6. I feel that I have no one to talk to.</h4>
+                <label><input type="radio" name="question6" value="1"> Not at all</label>
+                <label><input type="radio" name="question6" value="2"> Rarely</label>
+                <label><input type="radio" name="question6" value="3"> Sometimes</label>
+                <label><input type="radio" name="question6" value="4"> Often</label>
+                <label><input type="radio" name="question6" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>7. I feel that I am achieving less than I should.</h4>
+                <label><input type="radio" name="question7" value="1"> Not at all</label>
+                <label><input type="radio" name="question7" value="2"> Rarely</label>
+                <label><input type="radio" name="question7" value="3"> Sometimes</label>
+                <label><input type="radio" name="question7" value="4"> Often</label>
+                <label><input type="radio" name="question7" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>8. I feel under an unpleasant level of pressure to succeed.</h4>
+                <label><input type="radio" name="question8" value="1"> Not at all</label>
+                <label><input type="radio" name="question8" value="2"> Rarely</label>
+                <label><input type="radio" name="question8" value="3"> Sometimes</label>
+                <label><input type="radio" name="question8" value="4"> Often</label>
+                <label><input type="radio" name="question8" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>9. I feel that I am not getting what I want out of my job.</h4>
+                <label><input type="radio" name="question9" value="1"> Not at all</label>
+                <label><input type="radio" name="question9" value="2"> Rarely</label>
+                <label><input type="radio" name="question9" value="3"> Sometimes</label>
+                <label><input type="radio" name="question9" value="4"> Often</label>
+                <label><input type="radio" name="question9" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>10. I feel that I am in the wrong organization or the wrong profession.</h4>
+                <label><input type="radio" name="question10" value="1"> Not at all</label>
+                <label><input type="radio" name="question10" value="2"> Rarely</label>
+                <label><input type="radio" name="question10" value="3"> Sometimes</label>
+                <label><input type="radio" name="question10" value="4"> Often</label>
+                <label><input type="radio" name="question10" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>11. I am frustrated with parts of my job.</h4>
+                <label><input type="radio" name="question11" value="1"> Not at all</label>
+                <label><input type="radio" name="question11" value="2"> Rarely</label>
+                <label><input type="radio" name="question11" value="3"> Sometimes</label>
+                <label><input type="radio" name="question11" value="4"> Often</label>
+                <label><input type="radio" name="question11" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>12. I feel that organizational politics or bureaucracy frustrate my ability to do a good job.</h4>
+                <label><input type="radio" name="question12" value="1"> Not at all</label>
+                <label><input type="radio" name="question12" value="2"> Rarely</label>
+                <label><input type="radio" name="question12" value="3"> Sometimes</label>
+                <label><input type="radio" name="question12" value="4"> Often</label>
+                <label><input type="radio" name="question12" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>13. I feel that there is more work to do than I practically have the ability to do.</h4>
+                <label><input type="radio" name="question13" value="1"> Not at all</label>
+                <label><input type="radio" name="question13" value="2"> Rarely</label>
+                <label><input type="radio" name="question13" value="3"> Sometimes</label>
+                <label><input type="radio" name="question13" value="4"> Often</label>
+                <label><input type="radio" name="question13" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>14. I feel that I do not have time to do many of the things that are important to doing a good quality job.</h4>
+                <label><input type="radio" name="question14" value="1"> Not at all</label>
+                <label><input type="radio" name="question14" value="2"> Rarely</label>
+                <label><input type="radio" name="question14" value="3"> Sometimes</label>
+                <label><input type="radio" name="question14" value="4"> Often</label>
+                <label><input type="radio" name="question14" value="5"> Very Often</label>
+            </li>
+            <li>
+                <h4>15. I find that I do not have time to plan as much as I would like to.</h4>
+                <label><input type="radio" name="question15" value="1"> Not at all</label>
+                <label><input type="radio" name="question15" value="2"> Rarely</label>
+                <label><input type="radio" name="question15" value="3"> Sometimes</label>
+                <label><input type="radio" name="question15" value="4"> Often</label>
+                <label><input type="radio" name="question15" value="5"> Very Often</label>
+            </li>
+        </ul>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <div id="results"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
